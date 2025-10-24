@@ -2,6 +2,9 @@
 
 package org.yourcompany.calculadora;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author Posa el teu nom
@@ -12,11 +15,22 @@ public class Calculadora {
 
     public static void main(String[] args) {
 
+
+
+      
+
+        // Exemples de crida per al mètode cinema
+        // cinema(8.0, false, true);
+        
+    
+        // Exemples de crida per al mètode caraocreu
+        // caraocreu(10); 
+
         // Exemples de crida per al mètode nombreDigits
-        System.out.println("Nombre de dígits de 1234: " + nombreDigits(1234));
-        System.out.println("Nombre de dígits de 56789: " + nombreDigits(56789));
-        System.out.println("Nombre de dígits de -101010: " + nombreDigits(-101010));
-        System.out.println("Nombre de dígits de 0: " + nombreDigits(0));
+        //System.out.println("Nombre de dígits de 1234: " + nombreDigits(1234));
+        //System.out.println("Nombre de dígits de 56789: " + nombreDigits(56789));
+        //System.out.println("Nombre de dígits de -101010: " + nombreDigits(-101010));
+        //System.out.println("Nombre de dígits de 0: " + nombreDigits(0));
 
         // Exemples de crida per al mètode sumaPrimersNumeros
         // System.out.println("Suma dels primers 5 números: " + sumaPrimersNumeros(5));
@@ -62,5 +76,56 @@ public class Calculadora {
         return comptador;
     }
 
+    public static int caraocreu(int h) {
+        Random generadorAleatoris = new Random();
+        int cara = 0;
+        int creu = 0;
+        int i = 1;
+        while(i<= h) {
+           int tirada = generadorAleatoris.nextInt(0,2); // 0 o 1
+            if (tirada == 0) {
+                cara = cara + 1;
+                System.out.println("Ha sortit cara!");
+            } else {
+                creu = creu + 1;
+                System.out.println("Ha sortit creu!");
+            }
+            i++;
+            System.out.println(" Numero de cares: " + cara + " Numero de creus: " + creu);
+        }   
+        return i;
+    }
 
+    public static double cinema (double entrada, boolean capde, boolean CJ) {
+        Scanner teclat = new Scanner(System.in);
+        
+        
+        double entradaCap = entrada + entrada*0.1;
+        double entradaaux;
+ 
+        System.out.println("Benvingut al cinema de tarragona, per obtenir el preu de la entrada, respongueu les següents preguntes: ");
+        System.out.println("És cap de setmana? (s/n)");
+        
+        
+        if (capde == false){System.out.println("El preu de l'entrada en dia laboral es de " + entrada + " EUR");
+               entradaaux= entrada;}
+        else { System.out.println ("El preu al cap de setmana es de " + entradaCap + "EUR");
+               entradaaux= entradaCap;};
+        
+        System.out.println("");
+        System.out.println("Tens carnet jove? (s/n)");
+        
+        
+        
+        if (CJ == true){System.out.println("El preu de l'entrada amb carnet jove es: " + (entradaaux - entradaaux*0.15)  + " EUR");}
+        else { System.out.println ("El preu de l'entrada sense carnet jove es: " + entradaaux + "EUR");};
+
+        return entradaaux;
+
+    }
+    
 }
+        
+    
+
+
