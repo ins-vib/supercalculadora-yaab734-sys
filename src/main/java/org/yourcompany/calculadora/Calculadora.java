@@ -17,8 +17,8 @@ public class Calculadora {
 
 
 
-      
-
+      int hola = calcularPotencia(2,3);  
+      System.out.println(hola);
         // Exemples de crida per al mètode cinema
         // cinema(8.0, false, true);
         
@@ -123,8 +123,58 @@ public class Calculadora {
         return entradaaux;
 
     }
-    
+
+    public static int sumaPrimersNumeros(int n) {
+        
+        int i = 1;
+        int suma = 0;
+        while (i <= n) {
+            suma = i;
+            i++;
+            System.out.println("Suma dels primers " + n + " números: " + suma);
+        }
+        return suma;
+    }
+
+    public static int calcularFactorial(int n) {
+
+       int resultat = 1;
+       int i = 1;
+       while (n>=i) {
+
+        resultat = resultat * i;
+       //  System.out.println("El factorial es: " + resultat);
+        i++;
+        
+        
+       } 
+       return resultat;
 }
+
+    public static int sumaQuadrats(int n) {
+      int resultat = 0;
+       int i = 1;
+       while (n>=i) {
+           resultat = resultat + (i * i);
+        //  System.out.println("El factorial es: " + resultat);
+        i++;
+       }return resultat;
+       } 
+       
+
+       public static int calcularPotencia(int base, int exponent) {
+       
+
+        int resultat = 0;
+
+        resultat = (int) Math.pow(base, exponent);
+        return resultat;
+       }
+    }
+    
+
+    
+
         
     
 
